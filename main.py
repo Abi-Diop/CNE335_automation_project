@@ -14,9 +14,12 @@ if __name__ == '__main__':
     # TODO - Create a Server object
     server_ip = "3.15.21.27"
     rsa_key = r"C:\Users\AbyDiop\Downloads\abi_keypair.ppk"
-        # run upgrade and update command
+    username = 'ubuntu'
+    # run upgrade and update command
     upgrade = 'sudo apt update && sudo apt upgrade -y'
-    my_serv = Server(server_ip, rsa_key)
+    my_serv = Server(server_ip, rsa_key, username, upgrade)
     # TODO - Call Ping method and print the results
     print(my_serv.ping())
+    print("Updating server...")
+    ssh_result = my_serv.upgrade
     print(ssh_result)
